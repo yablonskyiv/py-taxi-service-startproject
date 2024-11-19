@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Car, Manufacturer, Driver
+from taxi.models import Car, Manufacturer, Driver
 
 
 class DriverAdmin(admin.ModelAdmin):
@@ -28,7 +28,6 @@ class CarAdmin(admin.ModelAdmin):
     list_filter = ['manufacturer']
 
 
-# Register your models here.
 admin.site.register(Manufacturer)
 admin.site.register(Car, CarAdmin)
 admin.site.register(Driver, DriverAdmin)

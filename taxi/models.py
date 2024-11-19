@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-# Create your models here.
 
 
 class Manufacturer(models.Model):
@@ -22,7 +21,7 @@ class Driver(AbstractUser):
 
 class Car(models.Model):
     model = models.CharField(max_length=225)
-    manufacturer = models.ForeignKey(Manufacturer, on_delete=models.CASCADE)
+    manufacturer = models.ForeignKey(Manufacturer, on_delete=models.CASCADE, related_name='cars')
     drivers = models.ManyToManyField(Driver, related_name='cars')
 
     def __str__(self):
